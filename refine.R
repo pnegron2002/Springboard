@@ -46,3 +46,5 @@ df['company_houten'] <- company_houten
 df['company_unilever'] <- company_unilever
 
 print(df)
+
+write.csv('/Users/pnegron/Desktop/refine_clean.csv')
