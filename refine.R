@@ -1,5 +1,6 @@
 # import the dplyr package
 library(dplyr)
+library(ggmap)
 
 path <- file.path("~", "ipwsp-aci/springboard_files", "refine.csv")
 
@@ -32,13 +33,13 @@ company_tablet <- ifelse(df$Product_code == 'Tablet', 1, 0)
 
 company_phillips <- ifelse(df$company == 'PHILLIPS', 1, 0)
 company_azko <- ifelse(df$company == 'AKZO', 1, 0)
-company_houten <- ifelse(df$company == 'VAN_HOUTEN', 1, 0)
+company_houten <- ifelse(df$company == 'VAN HOUTEN', 1, 0)
 company_unilever <- ifelse(df$company == 'UNILEVER', 1, 0)
 
 df['product_smartphone'] <- company_smartphone
 df['product_tv'] <- company_tv
-df['product'] <- company_laptop
-df['product'] <- company_tablet
+df['product_laptop'] <- company_laptop
+df['product_tablet'] <- company_tablet
 
 df['company_philips'] <- company_phillips
 df['company_azko'] <- company_azko
@@ -47,4 +48,4 @@ df['company_unilever'] <- company_unilever
 
 print(df)
 
-write.csv('/Users/pnegron/Desktop/refine_clean.csv')
+write.csv(df, file='/Users/pnegron/Desktop/refine_clean.csv')
