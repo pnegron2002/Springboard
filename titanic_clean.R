@@ -2,7 +2,7 @@
 library(dplyr)
 library(ggmap)
 library(tidyr)
-path <- file.path("~", "Springboard", "titanic3.csv")
+path <- file.path("~", "Springboard", "titanic3_origiinal.csv")
 print(path)
 refine2 <- read.csv(path, stringsAsFactors= TRUE)
 titanic_table <- tbl_df(refine2)
